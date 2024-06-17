@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: datamanagement
+  cloud:
+    config:
+      uri: http://16.171.17.209:8888
+      profile: dev
+      
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+    
+      
+  config:
+    import: optional:configserver:http://16.171.17.209:8888
+
+  rabbitmq:
+    host: 13.60.24.178
+    port: 5672
+    username: guest
+    password: guest
+    
+    
+    
+    
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+         
